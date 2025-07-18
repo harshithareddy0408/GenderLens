@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenderLens</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <nav class="flex justify-between items-center p-6 bg-white shadow-md">
+        <div class="flex items-center space-x-4">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="GenderLens Logo" class="h-12">
+            <h1 class="text-4xl font-extrabold text-purple-900">GenderLens</h1>
+        </div>
+        <div class="space-x-6">
+            <a href="/" class="text-pink-500 font-semibold">Home</a>
+            <a href="/about" class="hover:text-pink-500">About</a>
+        </div>
+    </nav>
+    
+    <header class="text-center py-16 bg-gradient-to-r from-pink-400 to-purple-500 text-white fade-in">
+        <h2 class="text-6xl font-extrabold">Bias-Free x Inclusive</h2>
+        <p class="mt-4 text-lg max-w-2xl mx-auto">Using AI to analyze and detect gender bias in text, ensuring equality in educational materials.</p>
+    </header>
+    
+    <section class="container mx-auto px-6 py-12">
+        <div class="bg-white p-8 shadow-lg rounded-lg max-w-3xl mx-auto text-center hover:shadow-2xl transition transform hover:-translate-y-2">
+            <h3 class="text-3xl font-semibold text-gray-800">The Importance of Addressing Gender Bias</h3>
+            <p class="mt-4 text-gray-600">
+                According to a recent <a href="https://timesofindia.indiatimes.com/education/news/high-incidence-of-gender-bias-in-school-textbooks-which-indian-state-is-topping-the-charts/articleshow/113398209.cms" 
+                class="text-pink-500 underline">Times of India report</a>, an alarming 33% of school textbooks in India still depict women in traditional domestic roles, while men are associated with professional careers. 
+                This bias is especially high in Uttar Pradesh and Tamil Nadu.
+            </p>
+            <blockquote class="mt-4 italic text-gray-700 border-l-4 border-pink-500 pl-4">“Mitigation of data is better than mitigation on NLP models.”</blockquote>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 shadow-lg rounded-lg text-center hover:shadow-2xl transition transform hover:-translate-y-2">
+            <h4 class="text-2xl font-semibold text-gray-800">🚀 AI-Powered Bias Detection</h4>
+            <p class="text-gray-600 mt-2">Our advanced AI scans your documents to detect gender bias.</p>
+        </div>
+        <div class="bg-white p-6 shadow-lg rounded-lg text-center hover:shadow-2xl transition transform hover:-translate-y-2">
+            <h4 class="text-2xl font-semibold text-gray-800">📊 Interactive Reports</h4>
+            <p class="text-gray-600 mt-2">Get detailed analysis and bias metrics for uploaded documents.</p>
+        </div>
+        <div class="bg-white p-6 shadow-lg rounded-lg text-center hover:shadow-2xl transition transform hover:-translate-y-2">
+            <h4 class="text-2xl font-semibold text-gray-800">⚡ Fast & Secure Processing</h4>
+            <p class="text-gray-600 mt-2">We ensure quick analysis while keeping your data safe.</p>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="container mx-auto px-6 py-12 text-center">
+        <h2 class="text-3xl font-semibold text-gray-800">Upload Your Document</h2>
+        <p class="text-gray-600 mt-2">Upload a PDF or text file to analyze for gender bias.</p>
+
+        <form action="/upload" method="post" enctype="multipart/form-data" class="mt-6 bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto hover:shadow-2xl transition">
+            <input type="file" name="file" accept=".pdf,.txt,.docx" class="border border-gray-300 p-2 rounded-lg w-full">
+            <button type="submit" class="bg-green-700 text-white px-6 py-2 rounded-lg mt-4 w-full hover:bg-green-900 transition transform hover:scale-105">Analyze</button>
+        </form>
+    </section>
+    
+
+
+    <footer class="bg-gray-900 text-white text-center py-6 mt-12">
+        <p>&copy; 2025 GenderLens. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

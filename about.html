@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenderLens</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <nav class="flex justify-between items-center p-6 bg-white shadow-md">
+        <div class="flex items-center space-x-4">
+            <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="GenderLens Logo" class="h-12">
+            <h1 class="text-4xl font-extrabold text-purple-900">GenderLens</h1>
+        </div>
+        <div class="space-x-6">
+            <a href="/" class="text-pink-500 font-semibold">Home</a>
+            <a href="/about" class="hover:text-pink-500">About</a>
+        </div>
+    </nav>
+     
+    <section class="max-w-6xl mx-auto p-10 bg-white shadow-xl rounded-2xl mt-12 border border-gray-200">
+        <h2 class="text-4xl font-extrabold text-purple-900 text-center mb-8">Our Methodology</h2>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-pink-500">
+            <h3 class="text-2xl font-semibold text-pink-500">1. Goal</h3>
+            <ul class="mt-2 text-gray-700 leading-relaxed list-disc pl-5">
+                <li>Identify and analyze gender bias in educational materials using NLP techniques.</li>
+                <li>Leverage AI to provide an objective and data-driven approach.</li>
+                <li>Understand how gender representation impacts learning.</li>
+            </ul>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-pink-500 mt-6">
+            <h3 class="text-2xl font-semibold text-pink-500">2. Why?</h3>
+            <ul class="mt-2 text-gray-700 leading-relaxed list-disc pl-5">
+                <li>Gender bias in textbooks influences perceptions from an early age.</li>
+                <li>Reinforces stereotypes affecting career choices, leadership roles, and social dynamics.</li>
+                <li>Our methodology highlights and mitigates these biases to promote equality in education.</li>
+            </ul>
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-pink-500 mt-6">
+            <h3 class="text-2xl font-semibold text-pink-500">3. What?</h3>
+            <ul class="mt-2 text-gray-700 leading-relaxed list-disc pl-5">
+
+                <li><b>Sentence-Level Analysis:</b> The system breaks down text into individual sentences and filters for those containing gender-related terms using a predefined keyword set.</li>
+                <li><b>Multi-Feature Classification:</b> Gender-related sentences are processed through three parallel methods: RoBERTa model classification, contextual embedding analysis, and named entity recognition to capture different aspects of potential bias.</li>
+                <li><b>Bias Threshold Detection:</b> Sentences receive a bias score (0-1) from the RoBERTa model, with scores above 0.5 flagged as potentially biased for further analysis.</li>
+                <li><b>Counterfactual Testing:</b> For flagged sentences, the system performs gender term swapping (he→she, man→woman) and measures the change in bias score to validate if the bias is genuinely gender-related.</li>
+                <li><b>Comprehensive Evaluation:</b> The final analysis combines direct classification results with supporting evidence from similarity analysis and entity-attribute patterns to provide a more reliable bias assessment.</li>
+            </ul>
+        </div>
+        
+        <div class="flex flex-col items-center mt-6 space-y-6">
+            <img src="{{ url_for('static', filename='assets/flowchart.png') }}" alt="Methodology Step 1" class="w-4/5 rounded-lg shadow-md border border-gray-300">
+            <img src="{{ url_for('static', filename='assets/roberta.jpg') }}" alt="Methodology Step 2" class="w-4/5 rounded-lg shadow-md border border-gray-300">
+        </div>
+        
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-pink-500 mt-6">
+            <h3 class="text-2xl font-semibold text-pink-500">4. The "IT" Factor</h3>
+            <ul class="mt-2 text-gray-700 leading-relaxed list-disc pl-5">
+                <li><b>Triple-layered feature extraction:</b> By simultaneously processing text through RoBERTa classification, contextual embeddings, and named entity recognition, the system captures both explicit and implicit gender bias indicators.</li>
+                <li><b>Counterfactual testing methodology:</b> The gender term swap and re-scoring mechanism provides empirical validation of bias detection, significantly reducing false positives compared to single-pass classification systems.</li>
+                <li><b>Contextual understanding:</b> The system doesn't simply flag gender-related terms but evaluates their usage in context, distinguishing between descriptive mentions and prescriptive stereotypes.</li>
+                <li><b>Two-phase filtering approach:</b> The system first identifies gender-related content through comprehensive keyword matching, then applies counterfactual testing only to those sentences - creating a computationally efficient pipeline that maintains high accuracy while reducing processing overhead.</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+    <footer class="bg-gray-900 text-white text-center py-6 mt-12">
+        <p>&copy; 2025 GenderLens. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
